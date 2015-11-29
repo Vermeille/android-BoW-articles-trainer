@@ -2,7 +2,9 @@ import requests
 import json
 import time
 
-API_KEY='THE_KEY'
+API_KEY=''
+with open('key', 'r') as key_txt:
+    API_KEY=key_txt.read().replace('\n','')
 SUBREDDITS='programming+machinelearning'
 
 #Work around a bug in BoW

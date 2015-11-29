@@ -14,8 +14,7 @@ DO A PULL REQUEST, I DON'T CARE ABOUT THAT KIND OF DETAILS), the package name
 (SAME, DON'T WHINE, FIX), check cloud-messaging / GCM, save the json file, and
 copy it in the android/app/ directory.
 
-Change the variable `API_KEY` in server/reddit.py by the API key given by the
-web page.
+Write the API key in a file named server/key.
 
 Change the variable SUBREDDITS to a +-separated list of subreddits you want to
 be notified about.
