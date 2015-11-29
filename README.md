@@ -12,19 +12,29 @@ Go
 accept the app name (WELL IF YOU WANT SOMETHING BETTER THAN "DEFAULT DEMO APP"
 DO A PULL REQUEST, I DON'T CARE ABOUT THAT KIND OF DETAILS), the package name
 (SAME, DON'T WHINE, FIX), check cloud-messaging / GCM, save the json file, and
-copy it in the app/ directory.
+copy it in the android/app/ directory.
 
-Note the API Key somewhere.
+Change the variable `API_KEY` in server/reddit.py by the API key given by the
+web page.
 
-Install the [Reddit BoW classifier](http://github.com/vermeille/reddit-bow).
+Change the variable SUBREDDITS to a +-separated list of subreddits you want to
+be notified about.
 
-Go in app/src/main/java/gcm/play/android/samples/com/gcmquickstart/VoteActivity.java
+Go in android/app/src/main/java/gcm/play/android/samples/com/gcmquickstart/VoteActivity.java
 and change the `VOTE_URL` to wherever you deployed.
 
-Open the directory with Android Studio, plug your phone, compile it, ignore the
+Open the android/ directory with Android Studio, plug your phone, compile it, ignore the
 stupid activity that opens up (AGAIN, FIX IT, I DON'T GIVE A SHIT, IT WORKS).
 
-You're done.
+You're done with the app.
+
+You should get 100 notifications on the first launch.
+
+Server side:
+
+    sudo docker build -t reddit .
+    sudo docker --net="host" -t reddit
 
 Enjoy, don't whine, and fix the shit you don't like on your own. The app is
 stupid enough to be fixed by a 3yo kido.
+
