@@ -66,8 +66,6 @@ RUN git clone https://github.com/Vermeille/bow && \
     make && \
     cd ../..
 
-RUN apt-get install -y python python-requests
-
 # Mandatory: generate the locales of the languages the library uses.
 RUN locale-gen fr_FR.UTF-8
 
@@ -75,4 +73,4 @@ ADD . /root
 
 EXPOSE 8888
 
-ENTRYPOINT ["/root/start.sh"]
+ENTRYPOINT ["./bow/build/bow"]
